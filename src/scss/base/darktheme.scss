@@ -1,0 +1,63 @@
+// Базові стилі кольорової схеми сайту
+// Сніппет (HTML): theme
+html.dark body {
+   color: #fff;
+   background-color: #263238;
+}
+html.light body {
+   background-color: #fff;
+   color: #263238;
+}
+html.dark .theme__icon {
+   background: url("@img/icons/sun.svg") 0 0 no-repeat;
+}
+html.light .theme__icon {
+   background: url("@img/icons/moon.svg") 0 0 / 100% no-repeat;
+}
+
+.theme {
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   // Розкоментувати, якщо хочемо фіксовану іконку знизу Viewport'а на маленьких екранах
+   /*  
+   @media (max-width: $mobileSmall) {
+      position: fixed;
+      bottom: 15px;
+      right: 15px;
+      width: rem(50);
+      height: rem(50);
+   } 
+   */
+}
+.theme__icon {
+   width: 30px;
+   height: 30px;
+   flex: 0 0 30px;
+   cursor: pointer;
+}
+.theme__reset {
+   opacity: 0;
+   visibility: hidden;
+}
+.theme__reset.active {
+   opacity: 1;
+   visibility: visible;
+}
+.theme__reset::before {
+   content: "x";
+   position: absolute;
+   top: 0;
+   right: 0;
+   cursor: pointer;
+   width: 10px;
+   height: 10px;
+   font-size: 7px;
+   border-radius: 50%;
+   line-height: 10px;
+   color: #fff;
+   text-align: center;
+   background-color: #666;
+}
